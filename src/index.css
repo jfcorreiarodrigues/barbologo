@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #111111;
+    color: #F9F9F7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Minimal dark scrollbar */
+  ::-webkit-scrollbar        { width: 4px; }
+  ::-webkit-scrollbar-track  { background: #111111; }
+  ::-webkit-scrollbar-thumb  { background: rgba(249,249,247,0.18); }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(249,249,247,0.36); }
+}
+
+@layer components {
+  /*
+   * DROP CAP — first letter of .drop-cap paragraphs floats left,
+   * spanning approx. 3 body lines, in bold Playfair Display.
+   */
+  .drop-cap::first-letter {
+    float: left;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 5.25rem;
+    font-weight: 900;
+    line-height: 0.78;
+    padding-right: 0.14em;
+    padding-top: 0.06em;
+    color: #F9F9F7;
+  }
+
+  /*
+   * DOTTED LEADER — the elastic spacer between service name and price.
+   * Applied as an empty <span> between the two columns.
+   */
+  .leader-dots {
+    flex: 1;
+    border-bottom: 1px dotted rgba(249,249,247,0.22);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.28rem;
+    min-width: 1rem;
+  }
+
+  /* Short fixed-width leader between duration and price */
+  .leader-dots-short {
+    width: 2rem;
+    flex-shrink: 0;
+    border-bottom: 1px dotted rgba(249,249,247,0.22);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.28rem;
+  }
+}
