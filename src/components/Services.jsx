@@ -102,7 +102,7 @@ export default function Services() {
             </h2>
 
             {/* Menu container */}
-            <div className="bg-barbo-surface/40 rounded-3xl border border-barbo-text/[0.03] p-8 md:p-12 shadow-2xl backdrop-blur-sm opacity-0 animate-fade-in animate-slide-up" style={{ animationDelay: '0.3s' }}>
+            <div className="bg-barbo-surface/40 rounded-3xl border border-barbo-text/[0.03] p-6 md:p-12 shadow-2xl backdrop-blur-sm opacity-0 animate-fade-in animate-slide-up" style={{ animationDelay: '0.3s' }}>
               
               {/* Menu Title */}
               <div className="text-center mb-12">
