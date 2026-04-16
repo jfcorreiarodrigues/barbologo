@@ -1,10 +1,12 @@
+import heroImg from '../assets/barber1.jpg'
+
 export default function Hero() {
   return (
-    <section className="min-h-screen pt-28 pb-20 px-6 flex items-center">
+    <section className="min-h-screen pt-28 pb-20 px-6 flex items-center bg-barbo-bg">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-16">
 
         {/* ─── LEFT 66% ────────────────────────────────────────────────── */}
-        <div className="md:col-span-2 flex flex-col justify-center">
+        <div className="md:col-span-2 flex flex-col justify-center opacity-0 animate-fade-in animate-slide-up" style={{ animationDelay: '0.2s' }}>
 
           {/* Eyebrow rule */}
           <div className="flex items-center gap-4 mb-8">
@@ -24,7 +26,7 @@ export default function Hero() {
           </h1>
 
           {/* Body copy */}
-          <p className="font-sans font-light text-base md:text-lg text-barbo-text/55
+          <p className="font-sans font-light text-base md:text-lg text-barbo-muted
                         max-w-prose leading-relaxed mb-10">
             Herança familiar, o tempo como aliado e o ritual da toalha quente.
             No Areeiro, Lisboa — quatro cadeiras de pele desenhadas à medida,
@@ -38,16 +40,16 @@ export default function Hero() {
             <a
               href="#agendamento"
               className="font-sans text-[11px] tracking-widest uppercase
-                         px-8 py-4 bg-barbo-green text-barbo-text
-                         border border-barbo-green
-                         hover:opacity-75 transition-opacity duration-200"
+                         px-8 py-4 bg-barbo-copper text-barbo-bg font-semibold rounded-full
+                         border border-barbo-copper shadow-lg
+                         hover:bg-barbo-copper-light hover:scale-105 transition-all duration-300"
             >
               Marcar Agendamento
             </a>
             <a
               href="#servicos"
               className="font-sans text-[11px] tracking-widest uppercase
-                         text-barbo-text/35 hover:text-barbo-text/65
+                         text-barbo-text/60 hover:text-barbo-copper
                          transition-colors duration-200"
             >
               Ver Serviços &rarr;
@@ -58,33 +60,36 @@ export default function Hero() {
           <div className="mt-12 flex items-center gap-5">
             <div className="w-px h-10 bg-barbo-text/15" />
             <div>
-              <div className="font-mono text-[10px] text-barbo-text/30 tracking-wider uppercase mb-0.5">
+              <div className="font-sans text-[10px] text-barbo-text/50 tracking-wider uppercase mb-0.5">
                 Time Out Lisboa · Prova de Excelência
               </div>
-              <div className="font-mono text-[11px] text-barbo-copper tracking-wider">
+              <div className="font-sans text-[11px] text-barbo-copper tracking-wider">
                 Melhores Barbearias de Lisboa · 3 Anos Consecutivos
               </div>
             </div>
           </div>
         </div>
 
-        {/* ─── RIGHT 33% — editorial image placeholder ─────────────────── */}
-        <div className="md:col-span-1 flex items-center justify-center md:justify-end">
+        {/* ─── RIGHT 33% — Editorial image ─────────────────── */}
+        <div className="md:col-span-1 flex items-center justify-center md:justify-end opacity-0 animate-fade-in animate-slide-up" style={{ animationDelay: '0.4s' }}>
           <div className="w-full max-w-xs md:max-w-full aspect-[3/4]
-                          bg-zinc-800 border border-barbo-text/20
-                          relative overflow-hidden">
+                          rounded-xl shadow-2xl border border-barbo-text/10
+                          relative overflow-hidden group">
+
+            {/* Actual image */}
+            <img src={heroImg} alt="O Barbólogo Barber Chair" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
 
             {/* Corner fiducials — copper */}
-            <span className="absolute top-4 left-4  w-5 h-5 border-t border-l border-barbo-copper/45 pointer-events-none" />
-            <span className="absolute top-4 right-4 w-5 h-5 border-t border-r border-barbo-copper/45 pointer-events-none" />
-            <span className="absolute bottom-4 left-4  w-5 h-5 border-b border-l border-barbo-copper/45 pointer-events-none" />
-            <span className="absolute bottom-4 right-4 w-5 h-5 border-b border-r border-barbo-copper/45 pointer-events-none" />
+            <span className="absolute top-4 left-4  w-5 h-5 border-t border-l border-barbo-copper/80 pointer-events-none rounded-tl-lg" />
+            <span className="absolute top-4 right-4 w-5 h-5 border-t border-r border-barbo-copper/80 pointer-events-none rounded-tr-lg" />
+            <span className="absolute bottom-4 left-4  w-5 h-5 border-b border-l border-barbo-copper/80 pointer-events-none rounded-bl-lg" />
+            <span className="absolute bottom-4 right-4 w-5 h-5 border-b border-r border-barbo-copper/80 pointer-events-none rounded-br-lg" />
 
             {/* Caption */}
-            <div className="absolute inset-x-0 bottom-8 flex flex-col items-center gap-2 px-6">
-              <div className="w-full h-px bg-barbo-text/10" />
-              <span className="font-mono text-[9px] tracking-widest uppercase
-                               text-barbo-text/20 text-center leading-relaxed">
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent pt-12 pb-6 px-6 flex flex-col items-center gap-2">
+              <div className="w-full h-px bg-barbo-text/30" />
+              <span className="font-sans text-[10px] tracking-widest uppercase
+                               text-white text-center leading-relaxed font-medium">
                 O lavatório frontal<br />d'O Barbólogo
               </span>
             </div>

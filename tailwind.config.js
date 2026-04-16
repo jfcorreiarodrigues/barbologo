@@ -5,29 +5,17 @@ export default {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    // Override ALL border-radius to 0 — "Bordas Vivas" doctrine
-    borderRadius: {
-      none: '0',
-      DEFAULT: '0',
-      sm: '0',
-      md: '0',
-      lg: '0',
-      xl: '0',
-      '2xl': '0',
-      '3xl': '0',
-      full: '0',
-    },
     extend: {
       colors: {
         barbo: {
-          bg:            '#111111',
-          surface:       '#181818',
+          bg:            '#0f172a',
+          surface:       '#1e293b',
           text:          '#F9F9F7',
-          muted:         '#6B6B66',
+          muted:         '#94a3b8',
           green:         '#2A4A2A',
           'green-hover': '#3A6040',
-          copper:        '#8B6340',
-          'copper-light':'#A07550',
+          copper:        '#eab308',
+          'copper-light':'#fef08a',
         },
       },
       fontFamily: {
@@ -38,7 +26,20 @@ export default {
       letterSpacing: {
         widest: '0.25em',
       },
-      typography: {},
+      animation: {
+        'fade-in': 'fadeIn 1s ease-out forwards',
+        'slide-up': 'slideUp 1s ease-out forwards',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        slideUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        }
+      }
     },
   },
   plugins: [],
